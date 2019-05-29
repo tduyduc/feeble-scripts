@@ -4,8 +4,8 @@ This repository contains feeble general-purpose scripts that might be useful for
 ## Source Types
 | Prefix | Type |
 |------|----------|
-|au3|AutoIt3|
-|c|C|
-|cpp|C++|
-|gs|Google App Script|
-|pas|Pascal|
+|`au3`|AutoIt3|
+|`c`|C|
+|`cpp`|C++|
+|`gs`|Google App Script|
+|`pas`|Pascal|
