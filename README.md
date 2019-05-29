@@ -13,3 +13,4 @@ _© T.D. Stoneheart. Unless explicitly noted, all scripts in this repository are
 |`java`|Java|
 |`js`|JavaScript|
 |`pas`|Pascal|
+|`sh`|Shell Script|
