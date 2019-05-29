@@ -11,4 +11,5 @@ _© T.D. Stoneheart. Unless explicitly noted, all scripts in this repository are
 |`cpp`|C++|
 |`gs`|Google App Script|
 |`java`|Java|
+|`js`|JavaScript|
 |`pas`|Pascal|
