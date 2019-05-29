@@ -39,6 +39,7 @@ int main(int argc, char *argv[]) {
 		cerr << "Usage: " << argv[0] << " NUMBER {from | to} RADIX" << endl
 			<< "Converts a non-negative integer from/to decimal." << endl
 			<< "Accepted radix range is from 2 to 64 inclusive." << endl;
+			<< "Digits are case-sensitive (i.e. 0123456789ABCDEF for radix 16)." << endl;
 		return 1;
 	}
 	string source = string(argv[1]), oper = string(argv[2]);
