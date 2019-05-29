@@ -1,0 +1,34 @@
+/*
+  This stylesheet is used for User JavaScript and CSS, a Chromium extension. It can be found at:
+  https://chrome.google.com/webstore/detail/nbhcbdghjpllgmfilhnhkllmkecfmpld
+*/
+
+/* ----------
+  *, !docs.google.com/presentation, !docs.google.com/document, !docs.google.com/spreadsheets, !script.google.com/a/, *, !docs.google.com/presentation, !docs.google.com/document, !docs.google.com/spreadsheets, !script.google.com/a/, !fonts.google.com, !https://appmaker.google.com/edit/, !github.com
+  For most websites but not Google Docs. Some attempts were made to avoid turn icons to "unknown-glyph" boxes.
+*/
+:not(i):not(pre):not(code):not([aria-hidden="true"]):not([class*="icon"]) {
+	font-family: Sans-Serif;
+}
+pre, code {
+	font-family: Monospace;
+}
+
+/* ----------
+  docs.google.com
+  For Google Docs apps. I tried my best to ditch the Google/Product Sans typeface but keep the document fonts intact.
+*/
+#docs-chrome :not(.cell-input):not(.editable), .modal-dialog *, #grid-bottom-bar, .goog-menu, .waffle-formula-preview-result, .docs-sheet-tab-name, .docs-material * {
+	font-family: Sans-Serif;
+}
+
+/* ----------
+  github.com
+  For GitHub. Monospace should be used in code and Sans-Serif everywhere else.
+*/
+body, article :not(code) {
+	font-family: Sans-Serif;
+}
+code, pre, .blob-num, .blob-code-inner, .cm-s-github-light .CodeMirror-lines {
+	font-family: Monospace;
+}
