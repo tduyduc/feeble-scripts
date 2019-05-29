@@ -8,4 +8,5 @@ This repository contains feeble general-purpose scripts that might be useful for
 |`c`|C|
 |`cpp`|C++|
 |`gs`|Google App Script|
+|`java`|Java|
 |`pas`|Pascal|
