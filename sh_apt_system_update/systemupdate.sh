@@ -1,1 +1,2 @@
-sudo apt update && sudo apt full-upgrade && sudo apt autoremove
+# Requires running as root
+apt update && apt full-upgrade && apt autoremove
