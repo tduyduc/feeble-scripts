@@ -1,3 +1,8 @@
+// A space-efficient implementation of bit strings which condenses 8 bits in one byte.
+// Each variable of bool type takes 1 byte, so 15 bool variables take 15 bytes.
+// In this implementation, 15 Boolean bits take 4 bytes (2 bytes for counting length).
+// The length attribute's type can be adjusted to size_t or unsigned char as necessary.
+
 #include <iostream>
 using namespace std;
 
@@ -5,12 +10,14 @@ class BitString {
 protected: unsigned char *bits; unsigned short len;
 public:
 	BitString(const unsigned short n): len(n) {
+		// n bits requires ceiling(n / 8) bytes, excluding length attribute
 		unsigned char chars = n / 8;
 		(n % 8) && chars++;
 		bits = new unsigned char[chars];
 		clearAll();
 	}
 	BitString(const bool *b, unsigned short n): len(n) {
+		// initialize bits from a bool array
 		unsigned short i = 0, chars = n / 8;
 		(n % 8) && chars++;
 		bits = new unsigned char[chars];
@@ -19,6 +26,7 @@ public:
 			if (b[i]) setBit(i);
 	}
 	BitString(const char *s) {
+		// initialize bits from a string containing binary digits
 		unsigned short i;
 		for (i = 0; s[i] == '0' || s[i] == '1'; i++);
 		len = i;
@@ -32,28 +40,31 @@ public:
 			else break;
 	}
 	BitString(const BitString &bs): len(bs.len) {
+		// copy from another bit string
 		unsigned short i = 0, n = sizeof(bs.bits), chars = n / 8;
 		bits = new unsigned char[bs.len];
 		for (; i < n; i++)
 			bits[i] = bs.bits[i];
 	}
 	bool setBit(unsigned short pos) {
+		// set the bit in a specified position to 1
 		if (pos >= len) return false;
 		unsigned char mask = 1 << (pos % 8);
-		bits[pos / 8] |= mask;
+		bits[pos / 8] |= mask; // bit-or the mask
 		return true;
 	}
 	bool clearBit(unsigned short pos) {
+		// set the bit in a specified position to 0
 		if (pos >= len) return false;
-		unsigned char mask = ~(1 << (pos % 8));
-		bits[pos / 8] &= mask;
-		return true;
+		unsigned char mask = ~(1 << (pos % 8)); // tilde is the complement operator (toggle all bits)
+		bits[pos / 8] &= mask; // bit-and the mask
+		return false;
 	}
 	bool toggleBit(unsigned short pos) {
 		if (pos >= len) return false;
 		unsigned char mask = 1 << (pos % 8);
-		bits[pos / 8] ^= mask;
-		return true;
+		bits[pos / 8] ^= mask; // bit-xor the mask
+		return ((bits[pos / 8] >> (pos % 8)) & 1); // get bit
 	}
 	inline bool getBit(unsigned short pos) {
 		if (pos >= len) return false;
@@ -123,6 +134,8 @@ public:
 		return ret;
 	}
 	friend ostream &operator <<(ostream &os, BitString bs);
+	operator char*() { return toString(); }
+	operator bool*() { return toBoolArray(); }
 };
 ostream &operator <<(ostream &os, BitString bs) {
 	os << bs.toString(); return os;
