@@ -1,6 +1,6 @@
 function range(start, end = undefined, step = 1) {
   step -= 0;
-  if (undefined === end) {
+  if ('undefined' === typeof end) {
     end = start;
     start = 0;
   }
