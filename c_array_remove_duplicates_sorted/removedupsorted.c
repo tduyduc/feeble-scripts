@@ -1,4 +1,4 @@
-// Remove duplicate entries in an array
+// Remove duplicate entries in an ASCENDING (sorted) array
 #include <stdio.h>
 
 int main() {
