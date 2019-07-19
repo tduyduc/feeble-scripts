@@ -1,11 +1,11 @@
 using System;
 
-namespace HelloConsoleApp {
-    class Program {
-        static void Main(string[] args) {
-            System.Console.OutputEncoding = new System.Text.UTF8Encoding();
-            System.Console.WriteLine("こんにちは！");
-            System.Console.ReadKey();
+namespace UnicodeHelloConsoleApp {
+    public class Program {
+        public static void Main(string[] args) {
+            Console.InputEncoding = Console.OutputEncoding = new System.Text.UTF8Encoding();
+            Console.WriteLine("こんにちは！");
+            Console.ReadKey();
         }
     }
 }
