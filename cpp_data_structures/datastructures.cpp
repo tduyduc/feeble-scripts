@@ -892,8 +892,8 @@ namespace Demo {
 	void demoStack() {
 		// cout << balancingSymbols("(){[()]}") << endl;
 		// cout << palindromeCheck("abc$cba") << endl;
-		LStack<int> a; StackWithMin<int> b;
-		SQueue<int> c; Deque<int> d;
+		// LStack<int> a; StackWithMin<int> b;
+		// SQueue<int> c; Deque<int> d;
 	}
 };
 
