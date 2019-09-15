@@ -11,7 +11,7 @@ _© 2014–2019 T.D. Stoneheart. Unless explicitly noted, all scripts in this re
 |`cpp`|C++|
 |`cs`|C♯|
 |`css`|Cascading Style Sheets|
-|`gs`|Google App Script|
+|`gs`|Google Apps Script|
 |`java`|Java|
 |`js`|JavaScript|
 |`pas`|Pascal|
