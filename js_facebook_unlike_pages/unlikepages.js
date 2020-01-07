@@ -21,6 +21,7 @@ async function unlikePages() {
         resolve(!(getUiMenuInner() instanceof Object));
       }, 50)
     )) {}
+    await new Promise(resolve => setTimeout(resolve, 500));
   }
 
   function getUiMenuInner() {
